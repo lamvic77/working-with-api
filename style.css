@@ -1,7 +1,13 @@
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 50px;
+ background-image: url("pics/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .wind-area {
@@ -10,15 +16,98 @@ body {
   height: 200px;
   margin: 30px auto;
   border: 2px solid black;
+  background: linear-gradient(
+    to bottom,
+    #b8e4f9 0%,
+    #b8e4f9 40%,
+    #4ca6d8 40%,
+    #267bb5 100%
+  );
 
   display: flex;
   align-items: center;
-
   overflow: hidden;
 }
 
 #boat {
   font-size: 60px;
-
-  transition: transform 2s;
+  display: inline-block;
+  animation: sailing 5s linear infinite;
 }
+
+@keyframes sailing {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(-3deg);
+  }
+
+  25% {
+    transform: translateX(150px) translateY(-8px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateX(300px) translateY(0px) rotate(5deg);
+  }
+
+  75% {
+    transform: translateX(450px) translateY(-5px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(600px) translateY(0px) rotate(-3deg);
+  }
+}
+
+
+
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  width: 600px;
+  max-width: 90%;
+  margin: 30px auto;
+}
+
+.weather-box {
+  background-color: #eaf5fa;
+  border: 2px solid #8bbbd0;
+  border-radius: 12px;
+
+  padding: 20px;
+  text-align: center;
+}
+
+.weather-box h3 {
+  font-size: 18px;
+  color: #31566b;
+  margin-bottom: 10px;
+}
+
+.weather-box p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1d4054;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
